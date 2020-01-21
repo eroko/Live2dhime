@@ -68,7 +68,7 @@ live2d_settings['l2dVersion'] = '1.4.2'; // 当前版本
 live2d_settings['l2dVerDate'] = '2018.11.12'; // 版本更新日期
 live2d_settings['homePageUrl'] = '{https://imhi.me}'; // 主页地址，可选 'auto'(自动), '{URL 网址}'
 live2d_settings['aboutPageUrl'] = '{https://imhi.me/admin}'; // 关于页地址, '{URL 网址}'
-live2d_settings['screenshotCaptureName'] = 'live2d.png'; // 看板娘截图文件名，例如 'live2d.png'
+live2d_settings['screenshotCaptureName'] = 'live2dphoto.png'; // 看板娘截图文件名，例如 'live2d.png'
 
 /****************************************************************************************************/
 
@@ -185,7 +185,7 @@ function initModel(waifuPath, type) {
         else $(".waifu").css("transition", 'all .3s ease-in-out');
     } catch (err) { console.log('[Error] JQuery UI is not defined.') }
 
-    live2d_settings.homePageUrl == 'auto' ? window.location.protocol + '//' + window.location.hostname + '/' : live2d_settings.homePageUrl;
+    live2d_settings.homePageUrl == '' ? window.location.protocol + '//' + window.location.hostname + '/' : live2d_settings.homePageUrl;
     if (window.location.protocol == 'file:' && live2d_settings.modelAPI.substr(0, 2) == '//') live2d_settings.modelAPI = 'http:' + live2d_settings.modelAPI;
 
     $('.waifu-tool .fui-home').click(function() {
