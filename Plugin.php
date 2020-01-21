@@ -204,7 +204,7 @@ eof;
 
 	//获取用户设置
 	private static function get_config(){
-		$config = Typecho_Widget::widget('Widget_Options')->Plugin('Live2dhime');
+		$config = Typecho_Widget::widget('Widget_Options')->Plugin('Live2d');
 		//用户设置选项
 		$config_option_arr = ['hitokotoAPI','canTurnToHomePage','canSwitchHitokoto','canSwitchModel','canSwitchTextures','canTakeScreenshot','canTurnToAboutPage','canCloseLive2d','modelStorage','modelRandMode','modelTexturesRandMode','showHitokoto','showF12Status','showF12Message','showF12OpenMsg','showCopyMessage','showWelcomeMessage','waifuSize','waifuTipsSize','waifuFontSize','waifuToolFont','waifuToolLine','waifuToolTop','waifuMinWidth','waifuEdgeSide','waifuDraggable','waifuDraggableRevert'];
 		//获取设置选项
