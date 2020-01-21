@@ -171,7 +171,7 @@ eof;
 
     //配置修改
     private static function live2d_setting($path){
-        $themes_index = Typecho_Widget::widget('Widget_Options')->Plugin('Live2dhime')->live2d_themes;
+        $themes_index = Typecho_Widget::widget('Widget_Options')->Plugin('Live2d')->live2d_themes;
         $themes_list = self::get_themes();
         $themes_path = $path.'/Live2dhime/themes/';
         $json = json_encode($themes_list);
