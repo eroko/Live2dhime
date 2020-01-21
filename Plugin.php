@@ -150,11 +150,11 @@ eof;
         echo $div;
 
         echo "<script>!window.jQuery && document.write(\"";
-        echo "<script src='".$ppd."/Live2dhime/assets/jquery.js'><\/script>";
+        echo "<script src='".$ppd."/Live2d/assets/jquery.js'><\/script>";
         echo "\")</script>";
-        echo "<script src='".$ppd."/Live2dhime/jqueryui/jquery-ui.js'></script> \n";
-        echo "<script src='".$ppd."/Live2dhime/assets/waifu-tips.js'></script> \n";
-        echo "<script src='".$ppd."/Live2dhime/assets/live2d.js'></script> \n";
+        echo "<script src='".$ppd."/Live2d/jqueryui/jquery-ui.js'></script> \n";
+        echo "<script src='".$ppd."/Live2d/assets/waifu-tips.js'></script> \n";
+        echo "<script src='".$ppd."/Live2d/assets/live2d.js'></script> \n";
 
         //看板娘配置
         self::live2d_setting($ppd);
@@ -163,8 +163,8 @@ eof;
     //加入css
     public static function header(){
         $ppd = Helper::options()->pluginUrl;
-        echo "<link rel='stylesheet' href='".$ppd."/Live2dhime/assets/waifu.css' />";
-        echo "<link rel='stylesheet' href='".$ppd."/Live2dhime/jqueryui/jquery-ui.css' />";
+        echo "<link rel='stylesheet' href='".$ppd."/Live2d/assets/waifu.css' />";
+        echo "<link rel='stylesheet' href='".$ppd."/Live2d/jqueryui/jquery-ui.css' />";
         self::get_themes();
 		
     }
@@ -173,7 +173,7 @@ eof;
     private static function live2d_setting($path){
         $themes_index = Typecho_Widget::widget('Widget_Options')->Plugin('Live2d')->live2d_themes;
         $themes_list = self::get_themes();
-        $themes_path = $path.'/Live2dhime/themes/';
+        $themes_path = $path.'/Live2d/themes/';
         $json = json_encode($themes_list);
         $live2d_themes= urldecode($json);
 		$live2d_config = self::get_config();
@@ -182,15 +182,15 @@ live2d_settings['modelAPI'] = '{$themes_path}';
 localStorage.live2d_themes = {$live2d_themes};
 {$live2d_config}
 localStorage.live2d_model_id = {$themes_index};
-  initModel("{$path}/Live2dhime/assets/waifu-tips.json")
+  initModel("{$path}/Live2d/assets/waifu-tips.json")
 eof;
         echo "<script type='text/javascript'>".$script."</script>";
     }
 
     //遍历插件下模型文件
     private static function get_themes(){
-        $ppd = Helper::options()->pluginDir('Live2dhime');
-        $path = $ppd.'/Live2dhime/themes';
+        $ppd = Helper::options()->pluginDir('Live2d');
+        $path = $ppd.'/Live2d/themes';
         //插件目录下的live2d素材包
         $list = scandir($path);
         //去除头部文件夹
